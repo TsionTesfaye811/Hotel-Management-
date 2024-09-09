@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Create Account - Hotel Website</title>
+  <link rel="stylesheet" href="Create Account.css"> 
+</head>
+<body>
+  <div class="create-account-container">
+    <h2>Create Account</h2>
+    <form action="#" method="post">
+      <div class="form-group">
+        <label for="fullname">Full Name:</label>
+        <input type="text" id="fullname" name="fullname" required>
+      </div>
+      <div class="form-group">
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required>
+      </div>
+      <div class="form-group">
+        <label for="username">Username:</label>
+        <input type="text" id="username" name="username" required>
+      </div>
+      <div class="form-group">
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" required>
+      </div>
+      <div class="form-group">
+        <label for="userid">User ID:</label>
+        <input type="text" id="userid" name="userid" required>
+      </div>
+      <div class="form-group">
+        <label for="avatar">Upload User ID Picture/File:</label>
+        <input type="file" id="avatar" name="avatar" accept="image/*">
+      </div>
+      <div class="form-group">
+        <label for="phone">Phone Number:</label>
+        <input type="tel" id="phone" name="phone" pattern="[+2519]{5}[0-9]{8}" placeholder="Format: +2519XXXXXXXX" >
+      </div>
+      <button type="submit"><a href="loginform.html">Create Account</a></button>
+    </form>
+  </div>
+</body>
+</html>

@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Beautiful Hotel Website</title>
+  <style>
+ body{ font-family: Arial, sans-serif;
+ background-color: lightblue;}
+ 
+ 
+    .gallery {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+
+    .gallery-item {
+      width: 1000px;
+      height: 500px;
+      margin: 100px;
+      overflow: hidden;
+      position: relative;
+      cursor: pointer;
+    }
+
+    .gallery-item img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .gallery-overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.5);
+      color: #fff;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      opacity: 0;
+      transition: opacity 0.3s ease;
+    }
+
+    .gallery-item:hover .gallery-overlay {
+      opacity: 1;
+    }
+
+    .gallery-overlay-content {
+      text-align: center;
+    }
+
+    .gallery-navigation {
+      display: flex;
+      justify-content: center;
+      margin-top: 10px;
+    }
+
+    .gallery-navigation button {
+      margin: 0 5px;
+      padding: 5px 10px;
+      background-color: #333;
+      color: #fff;
+      border: none;
+      cursor: pointer;
+      outline: none;
+    }
+  </style>
+</head>
+
+<body style="background-color:#32517a;color:white">
+  <h1>Welcome to Adila Hotel</h1>
+
+  <h2>Gallery</h2>
+  <div class="gallery">
+    <div class="gallery-item">
+      <img src="restaurant1.png" alt="Restaurant Image">
+      <div class="gallery-overlay">
+        <div class="gallery-overlay-content">
+          <h3>Restaurant</h3>
+          <p>Enjoy delicious meals in our beautiful restaurant.</p>
+        </div>
+      </div>
+    </div>
+    <div class="gallery-item">
+      <img src="addila.png" alt="Room Image">
+	   <img src="room1.png" alt="Room Image">
+      <div class="gallery-overlay">
+        <div class="gallery-overlay-content">
+          <h3>Room</h3>
+          <p>Relax and unwind in our comfortable rooms.</p>
+        </div>
+      </div>
+    </div>
+    <div class="gallery-item">
+      <img src="hall1.png" alt="Hall Image">
+      <div class="gallery-overlay">
+        <div class="gallery-overlay-content">
+          <h3>Conference Hall</h3>
+          <p>Host your events and meetings in our spacious conference hall.</p>
+        </div>
+      </div>
+    </div>
+    <div class="gallery-item">
+      <img src="images/staf.png" alt="Staff Image">
+      <div class="gallery-overlay">
+        <div class="gallery-overlay-content">
+          <h3>Our Staff</h3>
+          <p>Meet our friendly and professional staff.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="gallery-navigation">
+    <button onclick="prevImage()">&lt;</button>
+    <button onclick="nextImage()">&gt;</button>
+  </div>
+
+  <script>
+    var currentImage = 0;
+    var galleryItems = document.querySelectorAll('.gallery-item');
+
+    function showImage(index) {
+      if (index < 0 || index >= galleryItems.length) {
+        return;
+      }
+
+      for (var i = 0; i < galleryItems.length; i++) {
+        galleryItems[i].style.display = 'none';
+      }
+
+      galleryItems[index].style.display = 'block';
+      currentImage = index;
+    }
+
+    function prevImage() {
+      showImage(currentImage - 1);
+    }
+
+    function nextImage() {
+      showImage(currentImage + 1);
+    }
+
+    showImage(currentImage);
+  </script>
+</body>
+
+</html>

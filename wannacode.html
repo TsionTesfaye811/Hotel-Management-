@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1">
+    <link rel="icon" href="images/fevicon.jpg" type="image/gif" />
+    <link rel="stylesheet" href="wannacode.css">
+</head>
+<body>
+    <header class="header">
+        <span class="logo">
+            <a href="SHAMBALA index.html"><image src="images/lo.png" alt="#logo here" ></a>
+        </span>
+     
+        <nav>
+            <ul class="menu">
+                <li><a href="#">Home</a></li>
+                <li><a href="rooms.html">Rooms</a></li>
+                <li><a href="Gallery.html">Gallery</a></li>
+                <li><a href=" service.html">services</a></li>
+                <li><a href="aboutus.html">about Us</a></li>
+				<li><a href="admin login.php">Admin</a></li>
+            </ul>
+        </nav>
+    </header>
+	<br>
+<section class="fullscreen-gallery">
+    <div class="gallery-slider">
+        <div class="gallery-item">
+            <img src="images/images.png" alt="Gallery Image 1">
+            <h1 class="slide-heading">Welcome to shambelala Hotel</h1>
+            <div class="image-caption">front page</div>
+        </div>
+        <div class="gallery-item">
+            <img src="images/images1.png" alt="Gallery Image 2">
+            <h1 class="slide-heading">Welcome  to shambelala Hotel</h1>
+            <div class="image-caption">Caption for Image 2</div>
+        </div>
+        <div class="gallery-item">
+            <img src="images/shambala3.jpg" alt="Gallery Image 3">
+            <h1 class="slide-heading">Welcome to shambelala Hotel</h1>
+            <div class="image-caption">menu</div>
+        </div>
+        <!-- Add more images as needed -->
+    </div>
+	</section>
+
+    <section class="room">
+        <h2 style="text-align:center;color:#adaaac;">Our Rooms</h2>
+        <p style="text-align:center;color:#adaaac;">
+           we have four types of rooms kings room standard room luxury room and twin room
+        </p>
+    </section>
+<section class="rooms-offered">
+    <div class="room-type" id="kings-room">
+	<div class="room-image">
+        <img id="king-image1" src="images/room1.png" alt="King's Room">
+        <img id="king-image2" src="images/room2.png" alt="King's Room">
+        <img id="king-image3" src="images/room3.png" alt="King's Room">
+		</div>
+		<div class="room-text">
+        <h3>King's Room</h3>
+        <p>Our King's Room offers spacious comfort with a king-sized bed and modern amenities.</p>
+		  <p>Value: 2000 Birr per night</p>
+        
+		</div>
+		</div>
+		<div class="room-type" id="luxury-room">
+	<div class="room-image">
+        <img id="luxury-image1" src="images/room1.png" alt="Luxury Room">
+        <img id="luxury-image2" src="images/room3.png" alt="Luxury Room">
+        <img id="luxury-image3" src="images/room3.png"alt="Luxury Room">
+		</div>
+	<div class="room-text">
+        <h3>Luxury Room</h3>
+        <p>Indulge in luxury with our Luxury Room, featuring premium amenities and elegant decor.</p>
+		  <p>Value: 3000 Birr per night</p>
+    
+		</div>
+    </div>
+	<div class="room-image">
+        <img id="twin-image1" src="images/room1.png" alt="Twin Room">
+      <img id="twin-image2" src="images/room3.png" alt="Twin Room">
+        <img id="twin-image3" src="images/room3.png" alt="Twin Room">
+	
+		</div>
+		<div class="room-text">
+        <h3>Twin Room</h3>
+        <p>Perfect for friends or family, our Twin Room offers twin beds and a relaxing atmosphere.</p>
+		  <p>Value: 2500 Birr per night</p>
+        
+		</div>
+    </div>
+</section>
+    <script>
+   document.addEventListener('DOMContentLoaded', function () {
+
+    function slideKingImages() {
+        const kingImages = [
+            document.getElementById('king-image1'),
+            document.getElementById('king-image2'),
+            document.getElementById('king-image3')
+        ];
+        let kingIndex = 0;
+
+        setInterval(() => {
+            kingImages[kingIndex].classList.remove('active');
+            kingIndex = (kingIndex + 1) % kingImages.length;
+            kingImages[kingIndex].classList.add('active');
+        }, 4000);
+    }
+
+    function slideLuxuryImages() {
+        const luxuryImages = [
+            document.getElementById('luxury-image1'),
+            document.getElementById('luxury-image2'),
+            document.getElementById('luxury-image3')
+        ];
+        let luxuryIndex = 0;
+
+        setInterval(() => {
+            luxuryImages[luxuryIndex].classList.remove('active');
+            luxuryIndex = (luxuryIndex + 1) % luxuryImages.length;
+            luxuryImages[luxuryIndex].classList.add('active');
+        }, 4000);
+    }
+
+    function slideTwinImages() {
+        const twinImages = [
+            document.getElementById('twin-image1'),
+            document.getElementById('twin-image2'),
+            document.getElementById('twin-image3')
+        ];
+        let twinIndex = 0;
+
+        setInterval(() => {
+            twinImages[twinIndex].classList.remove('active');
+            twinIndex = (twinIndex + 1) % twinImages.length;
+            twinImages[twinIndex].classList.add('active');
+        }, 4000);
+    }
+
+    slideKingImages();
+    slideLuxuryImages();
+    slideTwinImages();
+
+});
+ </script>
+    <footer class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4">
+                    <h3>Contact Us</h3>
+                    <ul>
+                        <li><a href="tel:+2519614545">+2519614545</a></li>
+                        <li><a href="mailto:info@hotelwebsite.com">info@hotelwebsite.com</a></li>
+                        <li>HV35+Q84, B51, Hosaina, Ethiopia</li>
+                    </ul>
+					       <div style="width: 100%"><iframe
+      width="95%"
+      height="250"
+      frameborder="0"
+      style="border:0"
+      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d16550.847197758682!2d37.46904051326878!3d7.551496757993318!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zM4KwMDgnNTIuOCJTIDM3wrA0MycyNi40Ilc!5e0!3m2!1sen!2sus!4v1658841103300!5m2!1sen!2sus"
+      allowfullscreen
+    ></iframe></div><br />
+                </div>
+                <div class="col-md-4">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="#">Home</a></li>
+                        <li><a href="rooms.html">Rooms</a></li>
+                        <li><a href="Gallery.html">Gallery</a></li>
+                        <li><a href="contact.php">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-4">
+                    <h3>Follow Us</h3>
+                    <ul class="social-icons">
+                        <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
+                        <li><a href="#"><i class="fab fa-twitter"></i></a></li>
+                        <li><a href="#"><i class="fab fa-instagram"></i></a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+		<section class="learn-more">
+    <div class="container">
+        <h2>Discover the Shambalala Experience</h2>
+        <a href="#" class="btn">Learn More</a>
+    </div>
+</section>
+<section class="work-with-us">
+    <div class="container">
+        <h2>Join Our Team</h2>
+        <p>We are always looking for talented individuals to join our team. Explore exciting career opportunities at Shambalala Hotel.</p>
+        <a href="#" class="btn">Apply Now</a>
+    </div>
+</section>
+        <div class="copyright">
+            <p>Copyright © 2016 Shambalala Hotel Website. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        <script>
+       document.addEventListener('DOMContentLoaded', function () {
+    const gallerySlider = document.querySelector('.gallery-slider');
+    const galleryItems = document.querySelectorAll('.gallery-item');
+    const slideHeading = document.querySelectorAll('.slide-heading');
+
+    let slideIndex = 0;
+    const totalSlides = galleryItems.length;
+
+    function slideGallery() {
+        slideIndex++;
+        if (slideIndex >= totalSlides) {
+            slideIndex = 0;
+        }
+
+        gallerySlider.style.transform = `translateX(-${slideIndex * 100}vw)`;
+
+        // Reset heading positions and show them after the slide transition
+        slideHeading.forEach(heading => {
+            heading.style.opacity = 0;
+            setTimeout(() => {
+                heading.style.opacity = 1;
+            }, 1000);
+        });
+    }
+// Slide to reveal rooms after 4 seconds and then continue sliding
+    setInterval(() => {
+        slideGallery();
+    }, 5000); // Adjust timing as needed
+});
+    </script>
+    </script>
+</body>
+</html>

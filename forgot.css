@@ -1,0 +1,26 @@
+  body {
+            background-color: skyblue;
+        }
+        
+        form {
+            margin: 20px;
+        }
+
+        input[type="text"],
+        input[type="password"] {
+            width: 200px;
+            padding: 5px;
+            margin-bottom: 10px;
+        }
+
+        button[type="submit"] {
+            padding: 5px 10px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+
+        #message {
+            margin: 20px;
+        }

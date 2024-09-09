@@ -1,0 +1,842 @@
+</html>
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1">
+    <link rel="icon" href="images/fevicon.jpg" type="image/gif" />
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+       
+    <style> .header {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background-color: rgba(255, 255, 255, 0.8); /* Semi-transparent background */
+            z-index:2; /* Ensure header is on top */
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px;
+			box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+		.overlay-header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.3); /* Semi-transparent background */
+  z-index: 4; /* Ensure header is above slider content */
+  padding: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+        .logo img {
+            width: 100px;
+            height: auto;
+            background-color: orange;
+        }
+
+        nav {
+            display: flex;
+            align-items: center;
+        }
+
+        nav ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+        }
+
+        nav li {
+            margin-left: 20px;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        nav a:hover {
+            color: lightgray;
+        }
+
+        .fullscreen-gallery {
+            position: relative;
+            width: 100vw;
+            height: 100vh;
+            overflow: hidden;
+            z-index: 2; /* Ensure gallery is behind header */
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0px;
+            background-color: teal;
+            color: dimgray;background-image: url('.jpg');
+            background-size: cover;
+            background-position: top;
+            background-color: #f0f0f0;
+        }
+
+        .rooms-offered {
+            position: relative;
+            width: 2000px;
+            height: auto;
+            overflow: hidden;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .room-type {
+            display: flex;
+            align-items: center;
+            margin-bottom: 40px;           
+        }
+
+        .room-image {
+		    position:relative;
+            flex: 1;
+            margin-right: 20px;
+			margin-bottom:20px;
+			margin-left:150px;
+			
+        }
+
+        .room-image img {
+            max-width: 100%;
+            height: 300px;
+            object-fit: cover;
+            position: absolute;
+            top: 0;
+            left: 0;
+            opacity: 0;
+            transition: opacity 1s ease-in-out;
+			border-radius: 20px;
+}
+.room-type {
+    display: flex;
+    align-items: center;
+    margin-bottom: 60px; /* Increased margin between room types */
+    border-bottom: 1px double gray ; /* Adding a border between room types for separation */
+    padding-bottom: 40px; /* Padding at the bottom of each room type */
+}
+
+.room-image {
+    position: relative;
+    width: 300px;
+    height: 300px;
+    margin-right: 20px;
+    margin-bottom: 20px;
+    overflow: hidden; 
+    border: 1px double #e0e0e0;
+    border-radius: 5px; 
+}
+
+.room-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+}
+
+.room-image img.active {
+    opacity: 1;
+    z-index: 1;
+}
+
+
+#kings-room .room-image img,
+#luxury-room .room-image img,
+#twin-room .room-image img {
+    left: 0;
+}
+
+
+        .room-text {
+            flex: 2;
+            padding: 10px;
+            background-color: #606b75;
+			opacity:0.8;
+        }
+
+        .room-text h3,
+        .room-text p {
+            margin: 0;
+            color: #d7cae3;
+        }
+
+        .room-text p {
+            margin-bottom: 20px;
+        }
+
+        .room-text a {
+            color: navy;
+            text-decoration: none;
+            border-bottom: 1px solid navy;
+        }
+
+        .room-text a:hover {
+            color: steelblue;
+            border-bottom-color: steelblue;
+        }
+
+        h1 {
+            color: powedertblue;
+        }
+
+        a {
+            color: navy;
+        }
+
+        a:hover {
+            color: steelblue;
+        }
+
+        .logo img {
+            width: 100px;
+            height: auto;
+            background-color: orange;
+        }
+
+        nav {
+            display: flex;
+            align-items: center;
+        }
+
+        nav ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+        }
+
+        nav li {
+            margin-left: 20px;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        nav a:hover {
+            color: lightgray;
+        }
+
+        .banner {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: #adaaac;
+            text-align: center;
+            animation: fadeIn 1s ease-in-out;
+            position: relative;
+            overflow: hidden;
+            width: 100%;
+            height: auto;
+            object-fit: cover;
+          
+        }
+
+        .banner h1 {
+            font-size: 3em;
+        }
+
+        .gallery {
+            display: flex;
+            justify-content: space-around;
+            margin: 1px 0;
+        }
+
+        .gallery img {
+            width: 20%;
+            height: auto;
+            border-radius: 30px;
+        }
+
+        .contact {
+            background-color: gray;
+            padding: 50px 0;
+            text-align: center;
+        }
+
+        .contact form {
+            max-width: 500px;
+            margin: 0 auto;
+        }
+
+        .contact label {
+            display: block;
+            margin-bottom: 10px;
+            font-size: 1.2em;
+            color: dimgray;
+        }
+
+        .contact input,
+        .contact textarea {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 20px;
+            border: 1px solid lightgray;
+            border-radius: 5px;
+            box-sizing: border-box;
+        }
+
+        .contact button {
+            background-color: navy;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .contact button:hover {
+            background-color: steelblue;
+        }
+
+        .footer {
+            background-color: #333;
+            color: white;
+            padding: 50px 0;
+            text-align: center;
+        }
+
+        .footer a {
+            color: white;
+            margin: 0 10px;
+        }
+
+        .footer a:hover {
+            color: navy;
+        }
+
+        .social-icons {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        .social-icons li {
+            display: inline-block;
+            margin: 0 10px;
+        }
+
+        .social-icons a {
+            color: white;
+            font-size: 1.5em;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+
+            to {
+                opacity: 1;
+            }
+        }
+
+        @keyframes slide {
+            0% {
+                transform: translateX(0);
+            }
+
+            25% {
+                transform: translateX(-100%);
+            }
+
+            50% {
+                transform: translateX(-200%);
+            }
+
+            75% {
+                transform: translateX(-300%);
+            }
+
+            100% {
+                transform: translateX(0);
+            }
+        }
+
+        @media screen and (max-width: 768px) {
+            
+        }
+.fullscreen-gallery {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.gallery-slider {
+    display: flex;
+    width: 300vw;
+    height: 100vh;
+    transition: transform 1s cubic-bezier(0.645, 0.045, 0.355, 1);
+}
+
+.gallery-item {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+}
+
+.gallery-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+	image-rendering: -webkit-optimize-contrast; /* For better contrast */
+    image-rendering: pixelated; 
+}
+
+.slide-heading {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    font-size: 48px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    animation: fadeInOut 5s ease-in-out infinite; 
+    opacity: 0;
+	z-index:2;
+
+}
+
+.image-caption {
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    color: white;
+    font-size: 24px;
+    animation: fadeIn 1s ease-in-out;
+}
+
+/* Hide horizontal scrollbar */
+body {
+    overflow-x: hidden;
+}
+
+/* Keyframes for slideIn and fadeIn animations */
+
+@keyframes fadeInOut {
+    0%, 100% {
+        opacity: 1;
+        transform: translate(-50%, -50%) scale(1);
+    }
+    50% {
+        opacity: 0;
+        transform: translate(-50%, -50%) scale(1.1);
+    }
+	 .header {
+            background-color: powderblue; /* corrected typo */
+            padding: 20px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: relative; /* added position relative */
+            z-index: 100; /* added z-index */
+        }
+
+        /* ... (your styles remain unchanged) ... */
+
+        .fullscreen-gallery {
+            position: relative;
+            width: 100vw;
+            height: 100vh;
+            overflow: hidden;
+            z-index: 2; /* added z-index */
+        }
+
+}
+
+*{
+    margin:0;
+    padding:0;
+    font-family:sans-serif times new romans;
+}
+.banner{
+    width:100%;
+    height:100vh;
+    background-image:linear-gradient(rgba(0,0,0,0.25),rgba(0,0,0,0.5)),url(1.jpg);
+    background-size:cover;
+    background-position:center;
+	opacity:0.9;
+}
+.navbar{
+    width:85%;
+    margin:auto;
+    padding:35px 0;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+	font-size:20px;
+}
+.logo{
+    width:100px;
+    cursor:pointer;
+}
+.navbar ul li{
+    list-style:none;
+    display:inline-block;
+    margin-bottom:2000px;
+    position:relative;
+	margin-right:200px;
+}
+.navbar ul li a{
+    text-decoration:none;
+    color:#fff;
+    text-transform:uppercase;
+}
+.navbar ul li::after{
+    content:'';
+    height:3px;
+    width:0;
+    background:silver;
+    position:absolute;
+    left:0;
+    bottom:-10px;
+    transition:0.s;
+}
+.navbar ul li:hover::after{
+    width:100%;
+}
+.content{
+    width:100%;
+    position:absolute;
+    top:40%;
+    transform:translatY(-50%);
+    text-align:center;
+    color:#fff;
+}
+.content h1{
+    font-size:70px;
+    margin-top:45px;
+}
+.content p{
+    margin:20px auto;
+    font-weight:100;
+    line-height:25px;
+}
+.btn{
+    display:inline-block;
+    font-size:18px;
+    color:#fff;
+    background:#333;
+    padding:13px 20px;
+    border:none;
+    cursor:pointer;
+}
+.btn:hover{
+    background:silver;
+    color:#fff;
+}
+
+    </style>
+</head>
+
+<body style="background-color:#32517a">
+ <body>
+    <div class="banner">
+        <div class="navbar">
+            <img src="logo.jpg" class="logo">
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Room</a></li>
+                <li><a href="#">Gallery</a></li>
+                <li><a href="#">Service</a></li>
+				<li><a href="#">Admin</a></li>
+            </ul>
+        </div>
+        <div class="content">
+            <h1>Claim Your Spot in Paradise</h1>
+            <p>  Book Now for Bliss! Immerse yourself in luxury,<br> 
+                where every moment is a symphony of relaxation and indulgence.
+                <br> From lavish accommodations to exquisite dining experiences, let us pamper you in the lap of luxury.""</p>
+                <a class="btn" href="#">About Our Hotel</a>
+        </div>
+
+    </div>
+    </body>
+
+
+
+
+	<marquee>
+        
+		</marquee>
+		<!--<div class="slideshow">
+  <div class="slide active">
+    <img src="k.jpg" alt="Slide 1">
+  </div>
+  <div class="slide">
+    <img src="a" alt="Slide 2">
+  </div>
+  <div class="slide">
+    <img src="image3.jpg" alt="Slide 3">
+  </div 
+  -->
+
+</div>
+    </section>
+
+    <section class="gall" >
+        <img src="9.jpg" >
+        <img src="0.jpg" >
+        <img src="7.jpg">
+        <img src="0.jpg" >
+    </section>
+
+    <section class="room">
+        <h2 style="text-align:center;color:#adaaac;">Our Rooms</h2>
+        <p style="text-align:center;color:#adaaac;">
+           we have four types of rooms kings room standard room luxury room and twin room
+        </p>
+    </section>
+	
+<section class="rooms-offered">
+    <div class="room-type" id="kings-room">
+	<div class="room-image">
+        <img id="king-image1" src="FBs.jpg" alt="King's Room">
+        <img id="king-image2" src="https://i.pinimg.com/236x/2a/74/94/2a7494fa63ff4d0e67530a36768f70c3.jpg" alt="King's Room">
+        <img id="king-image3" src="https://i.pinimg.com/474x/28/c4/41/28c441cc555747906a9edae66c099474.jpg" alt="King's Room">
+		</div>
+		<div class="room-text">
+        <h3>King's Room</h3>
+        <p>Our King's Room offers spacious comfort with a king-sized bed and modern amenities.</p>
+		  <p>Value: 2000 Birr per night</p>
+        <p><a href="#">Book Now</a></p>
+		</div>
+		</div>
+    <div class="room-type" id="luxury-room">
+	<div class="room-image">
+        <img id="luxury-image1" src="g.jpg" alt="Luxury Room">
+        <img id="luxury-image2" src="i.jpg" alt="Luxury Room">
+        <img id="luxury-image3" src="j.jpg" alt="Luxury Room">
+		</div>
+	<div class="room-text">
+        <h3>Luxury Room</h3>
+        <p>Indulge in luxury with our Luxury Room, featuring premium amenities and elegant decor.</p>
+		  <p>Value: 3000 Birr per night</p>
+        <p><a href="#">Book Now</a></p>
+		</div>
+    </div>
+    <div class="room-type" id="twin-room">
+	<div class="room-image">
+        <img id="twin-image1" src="images(1).jpg" alt="Twin Room">
+        <img id="twin-image2" src="l.jpg" alt="Twin Room">
+        <img id="twin-image3" src="images.jpg" alt="Twin Room">
+		</div>
+		<div class="room-text">
+        <h3>Twin Room</h3>
+        <p>Perfect for friends or family, our Twin Room offers twin beds and a relaxing atmosphere.</p>
+		  <p>Value: 2500 Birr per night</p>
+        <p><a href="#">Book Now</a></p>
+		</div>
+    </div>
+</section>
+<script>
+   document.addEventListener('DOMContentLoaded', function () {
+
+    function slideKingImages() {
+        const kingImages = [
+            document.getElementById('king-image1'),
+            document.getElementById('king-image2'),
+            document.getElementById('king-image3')
+        ];
+        let kingIndex = 0;
+
+        setInterval(() => {
+            kingImages[kingIndex].classList.remove('active');
+            kingIndex = (kingIndex + 1) % kingImages.length;
+            kingImages[kingIndex].classList.add('active');
+        }, 4000);
+    }
+
+    function slideLuxuryImages() {
+        const luxuryImages = [
+            document.getElementById('luxury-image1'),
+            document.getElementById('luxury-image2'),
+            document.getElementById('luxury-image3')
+        ];
+        let luxuryIndex = 0;
+
+        setInterval(() => {
+            luxuryImages[luxuryIndex].classList.remove('active');
+            luxuryIndex = (luxuryIndex + 1) % luxuryImages.length;
+            luxuryImages[luxuryIndex].classList.add('active');
+        }, 4000);
+    }
+
+    function slideTwinImages() {
+        const twinImages = [
+            document.getElementById('twin-image1'),
+            document.getElementById('twin-image2'),
+            document.getElementById('twin-image3')
+        ];
+        let twinIndex = 0;
+
+        setInterval(() => {
+            twinImages[twinIndex].classList.remove('active');
+            twinIndex = (twinIndex + 1) % twinImages.length;
+            twinImages[twinIndex].classList.add('active');
+        }, 4000);
+    }
+
+    slideKingImages();
+    slideLuxuryImages();
+    slideTwinImages();
+
+});
+
+    </script>
+    
+
+    <script>
+       document.addEventListener('DOMContentLoaded', function () {
+    const gallerySlider = document.querySelector('.gallery-slider');
+    const galleryItems = document.querySelectorAll('.gallery-item');
+    const slideHeading = document.querySelectorAll('.slide-heading');
+
+    let slideIndex = 0;
+    const totalSlides = galleryItems.length;
+
+    function slideGallery() {
+        slideIndex++;
+        if (slideIndex >= totalSlides) {
+            slideIndex = 0;
+        }
+
+        gallerySlider.style.transform = `translateX(-${slideIndex * 100}vw)`;
+
+        // Reset heading positions and show them after the slide transition
+        slideHeading.forEach(heading => {
+            heading.style.opacity = 0;
+            setTimeout(() => {
+                heading.style.opacity = 1;
+            }, 1000);
+        });
+    }
+
+    // Slide to reveal rooms after 4 seconds and then continue sliding
+    setInterval(() => {
+        slideGallery();
+    }, 5000); // Adjust timing as needed
+});
+
+
+    </script>
+
+<style>
+.heading {
+  font-size: 4.5rem;
+  text-align: center;
+  color: #8aaccf;
+}
+
+.services {
+  min-height: auto;
+  padding-bottom: 10rem;
+  color: #8aaccf;
+}
+
+.services h2 {
+  margin-bottom: 5rem;
+  color: #8aaccf;
+}
+
+.services .services-container {
+  display: flex; /* Keep flex for side-by-side arrangement */
+  justify-content: space-between; /* Distribute boxes evenly */
+  align-items: flex-start; /* Align boxes at the top */
+  color: #8aaccf;
+}
+
+.services-container .services-box {
+  display: flex;
+  flex: 1 1 33%; /* Set width to 33% for three equal parts */
+  flex-direction: column; /* Stack elements vertically */
+  align-items: center; /* Center content within each box */
+  background: #45596e;
+  padding: 4rem; /* Adjust padding as needed */
+  border-radius: 2rem;
+  box-shadow: 0 0.1rem 0.5rem var(--shadow-color);
+  text-align: center;
+  border-top: 0.6rem double black;
+  border-bottom: 0.6rem double black;
+  transition: 0.5s ease;
+  height: 20rem; /* Set fixed height (adjust as needed) */
+  padding: 4rem 3rem 2rem 3rem;
+  margin: 0rem 1rem 2rem 4rem;
+  color: #8aaccf;
+  
+}
+
+.services-container .services-box:hover {
+  box-shadow: 0 0.1rem 2rem var(--shadow-color);
+  transform: scale(1.02);
+}
+
+.services-box i {
+  font-size: 7rem;
+  color: #8aaccf;
+  margin-bottom: 2rem;
+
+
+</style>
+</head>
+<body>
+
+<section class="services" id="services">
+  <h1 class="heading">My <span>Services</span></h1>
+
+  <div class="services-container">
+    <div class="services-box">
+      <i class="bx bx-code-alt" aria-label="Contact Us"></i>
+      <h3>Contact Us</h3>
+      <p>HV35+Q84, B51, Hosaina, Ethiopia</p>
+      <a href="#" class="btn">Read More</a>
+    </div>
+    <div class="services-box">
+      <i class="bx bxs-paint" aria-label="Follow Us"></i>
+      <h3>Follow Us</h3>
+      <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Excepturi itaque similique, architecto
+        eaque ut quas delectus pariatur nesciunt in eligendi mollitia dicta.</p>
+      <ul class="social-icons">
+        <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
+        <li><a href="#"><i class="fab fa-twitter"></i></a></li>
+        <li><a href="#"><i class="fab fa-instagram"></i></a></li>
+      </ul>
+      <a href="#" class="btn">Read More</a>
+    </div>
+    <div class="services-box">
+      <i class="bx bx-bar-chart-alt" aria-label="Join Our Team"></i>
+      <h3>Discover the Shambalala Experience</h3>
+      <p>We are always looking for talented individuals to 
+        join our team. Explore exciting career opportunities
+        at Shambalala Hotel.</p>
+      <a href="#" class="btn">Learn More</a>
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="copyright">
+    <p>Copyright © 2016 Adila Hotel Website. All Rights Reserved.</p>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Complaint Management and Award System</title>
+</head>
+<body>
+    <h1>Welcome to the Complaint Management and Award System</h1>
+
+    <form action="" method="POST">
+        <h2>Registration</h2>
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" required><br><br>
+
+        <label for="institution">Choose an Institution:</label>
+        <select id="institution" name="institution" required>
+            <option value="institution1">Institution 1</option>
+            <option value="institution2">Institution 2</option>
+            <option value="institution3">Institution 3</option>
+            <!-- Add more institutions as needed -->
+        </select><br><br>
+
+        <label for="anonymous">Anonymous:</label>
+        <input type="checkbox" id="anonymous" name="anonymous"><br><br>
+
+        <label for="department">Choose a Department:</label>
+        <select id="department" name="department" required>
+            <option value="department1">Department 1</option>
+            <option value="department2">Department 2</option>
+            <option value="department3">Department 3</option>
+            <!-- Add more departments as needed -->
+        </select><br><br>
+
+        <label for="score">Score:</label>
+        <input type="number" id="score" name="score" min="1" max="10"><br><br>
+
+        <label for="complaint">Complaint:</label><br>
+        <textarea id="complaint" name="complaint" rows="4" cols="50"></textarea><br><br>
+
+        <input type="submit" value="Submit Complaint">
+    </form>
+</body>
+</html>

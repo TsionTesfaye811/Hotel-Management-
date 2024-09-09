@@ -1,0 +1,40 @@
+ body {
+            font-family: Arial, sans-serif;
+            background-color: #87ceeb;
+            margin: 0;
+            padding: 0;
+        }
+
+        table {
+            border-collapse: collapse;
+            width: 100%;
+            color: black;
+        }
+
+        th, td {
+            border: 1px solid black;
+            padding: 10px;
+            text-align: left;
+        }
+
+        th {
+            background-color: teal;
+            color: white;
+            font-weight: bold;
+        }
+
+        tr:hover {
+            background-color: #cccccc;
+        }
+
+        tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+
+        h1 {
+            text-align: center;
+            padding: 20px;
+            background-color: #f2f2f2;
+            border: 1px groove black;
+            margin-top: 0;
+        }

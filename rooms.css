@@ -1,0 +1,68 @@
+body {
+ font-family: Arial, sans-serif;
+ background-color: #ffe4b5;
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 20px auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  
+}
+
+.room {
+  width: 300px;
+  margin: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  overflow: hidden;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 1);
+  background-color: #ffF;
+}
+
+.room img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.room-details {
+  padding: 20px;
+}
+
+.room-details h3 {
+  margin-top: 0;
+  margin-bottom: 10px;
+     
+}
+
+.description {
+  color: #666;
+}
+
+.price {
+  font-weight: bold;
+  color: #007bff; /* Blue */
+}
+
+.book-button {
+  display: block;
+  width: 100%;
+  padding: 10px;
+  background-color: #007bff;
+  color: #fff;
+  text-align: center;
+  text-decoration: none;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.book-button:hover {
+  background-color: #0056b3;
+}

@@ -1,0 +1,32 @@
+<html>
+<head>
+<style>
+div p { /* descendant selector  */
+	background-color:yellow;
+}
+div > p{ /* child selector  */
+	background-color:red;
+}
+div ~ p{ /* general sibiling selector  */  
+	background-color:green;
+}
+div + p{ /* adjecent sibiling selector  */  
+	background-color:blue;
+}
+
+</style>
+ <link rel="stylesheet" type="text/css" href="extcss.css">
+</head>
+<body>
+<div>
+	<p>Paragraph 1</p> 
+	<p>Paragraph 2</p>
+	<section>
+	   <p> Paragraph 3 </p>
+	</section>
+</div>
+<p>Paragraph 4 </p>
+<p>Paragraph 5 </p>
+</body>
+</html>
+

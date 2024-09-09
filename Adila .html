@@ -1,0 +1,708 @@
+</html>
+<!DOCTYPE html>
+<html>
+<head>
+ <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1">
+    <link rel="icon" href="images/fevicon.jpg" type="image/gif" />
+  
+	 <link rel="stylesheet" href="css/style.css">
+	<title> WELCOME TO ADILA HOTEL</title>
+ 
+
+      <style> 
+    <style>
+	.header {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background-color: rgba(255, 255, 255, 0.8); /* Semi-transparent background */
+            z-index: 3; /* Ensure header is on top */
+            display: fixed;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px;
+			z-index:2;
+        }
+
+        .logo img {
+            width: 100px;
+            height: auto;
+            background-color: orange;
+        }
+
+        nav {
+            display: flex;
+            align-items: center;
+        }
+
+        nav ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+        }
+
+        nav li {
+            margin-left: 20px;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        nav a:hover {
+            color: lightgray;
+        }
+
+        .fullscreen-gallery {
+            position: relative;
+            width: 100vw;
+            height: 100vh;
+            overflow: hidden;
+            z-index: 2; /* Ensure gallery is behind header */
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0px;
+            background-color: teal;
+            color: dimgray;
+            background-image: url('.jpg');
+            background-size: cover;
+            background-position: top;
+            background-color: #f0f0f0;
+        }
+
+        .rooms-offered {
+            position: relative;
+            width: 100%;
+            height: auto;
+            overflow: hidden;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .room-type {
+            display: flex;
+            align-items: center;
+            margin-bottom: 40px;           
+        }
+
+        .room-image {
+		    position:relative;
+            flex: 1;
+            margin-right: 2000px;
+			margin-bottom:20px;
+			margin-left:500px;
+			
+        }
+
+        .room-image img {
+            max-width: 3000px;
+            height: 3000px;
+            object-fit: cover;
+            position: absolute;
+            top: 0;
+            left: 0;
+            opacity: 0;
+            transition: opacity 1s ease-in-out;
+			border-radius: 20px;
+}
+.room-type {
+    display: flex;
+    align-items: center;
+    margin-bottom: 60px; /* Increased margin between room types */
+    border-bottom: 5px double gray; /* Adding a border between room types for separation */
+    padding-bottom: 40px; /* Padding at the bottom of each room type */
+}
+
+.room-image {
+    position: relative;
+    width: 300px;
+    height: 300px;
+    margin-right: 20px;
+    margin-bottom: 20px;
+    overflow: hidden; 
+    border: 1px double #e0e0e0;
+    border-radius: 5px; 
+}
+
+.room-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+}
+
+.room-image img.active {
+    opacity: 1;
+    z-index: 1;
+}
+
+
+#kings-room .room-image img,
+#luxury-room .room-image img,
+#twin-room .room-image img {
+    left: 0;
+}
+
+
+        .room-text {
+            flex: 2;
+            padding: 20px;
+            background-color: #606b75;
+			opacity:0.8;
+        }
+
+        .room-text h3,
+        .room-text p {
+            margin: 0;
+            color: #d7cae3;
+        }
+
+        .room-text p {
+            margin-bottom: 20px;
+        }
+
+        .room-text a {
+            color: navy;
+            text-decoration: none;
+            border-bottom: 1px solid navy;
+        }
+
+        .room-text a:hover {
+            color: steelblue;
+            border-bottom-color: steelblue;
+        }
+
+        h1 {
+            color: powedertblue;
+        }
+
+        a {
+            color: navy;
+        }
+
+        a:hover {
+            color: gray;
+			background-color: steelblue;
+        }
+
+        .logo img {
+            width: 100px;
+            height: auto;
+            background-color: orange;
+        }
+
+        nav {
+            display: flex;
+            align-items: center;
+        }
+
+        nav ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+        }
+
+        nav li {
+            margin-left: 20px;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        nav a:hover {
+            color: lightgray;
+        }
+
+        .banner {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: #adaaac;
+            text-align: center;
+            animation: fadeIn 1s ease-in-out;
+            position: relative;
+            overflow: hidden;
+            width: 100%;
+            height: auto;
+            object-fit: cover;
+            opacity: 0.4;
+        }
+
+        .banner h1 {
+            font-size: 3em;
+        }
+
+        .gallery {
+            display: flex;
+            justify-content: space-around;
+            margin: 1px 0;
+        }
+
+        .gallery img {
+            width: 20%;
+            height: auto;
+            border-radius: 30px;
+        }
+
+        .contact {
+            background-color: gray;
+            padding: 50px 0;
+            text-align: center;
+        }
+
+        .contact form {
+            max-width: 500px;
+            margin: 0 auto;
+        }
+
+        .contact label {
+            display: block;
+            margin-bottom: 10px;
+            font-size: 1.2em;
+            color: dimgray;
+        }
+
+        .contact input,
+        .contact textarea {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 20px;
+            border: 1px solid lightgray;
+            border-radius: 5px;
+            box-sizing: border-box;
+        }
+
+        .contact button {
+            background-color: navy;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .contact button:hover {
+            background-color: steelblue;
+        }
+
+        .footer {
+            background-color: #333;
+            color: white;
+            padding: 50px 0;
+            text-align: center;
+        }
+
+        .footer a {
+            color: white;
+            margin: 0 10px;
+        }
+
+        .footer a:hover {
+            color: navy;
+        }
+
+        .social-icons {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        .social-icons li {
+            display: inline-block;
+            margin: 0 10px;
+        }
+
+        .social-icons a {
+            color: white;
+            font-size: 1.5em;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+
+            to {
+                opacity: 1;
+            }
+        }
+
+        @keyframes slide {
+            0% {
+                transform: translateX(0);
+            }
+
+            25% {
+                transform: translateX(-100%);
+            }
+
+            50% {
+                transform: translateX(-200%);
+            }
+
+            75% {
+                transform: translateX(-300%);
+            }
+
+            100% {
+                transform: translateX(0);
+            }
+        }
+
+        @media screen and (max-width: 768px) {
+            
+        }
+.fullscreen-gallery {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.gallery-slider {
+    display: flex;
+    width: 300vw;
+    height: 100vh;
+    transition: transform 1s cubic-bezier(0.645, 0.045, 0.355, 1);
+}
+
+.gallery-item {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+}
+
+.gallery-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+	image-rendering: -webkit-optimize-contrast; /* For better contrast */
+    image-rendering: pixelated; 
+}
+
+.slide-heading {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    font-size: 48px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    animation: fadeInOut 5s ease-in-out infinite; 
+    opacity: 0;
+	z-index:2;
+
+}
+
+.image-caption {
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    color: white;
+    font-size: 24px;
+    animation: fadeIn 1s ease-in-out;
+}
+
+/* Hide horizontal scrollbar */
+body {
+    overflow-x: hidden;
+}
+
+/* Keyframes for slideIn and fadeIn animations */
+
+@keyframes fadeInOut {
+    0%, 100% {
+        opacity: 1;
+        transform: translate(-50%, -50%) scale(1);
+    }
+    50% {
+        opacity: 0;
+        transform: translate(-50%, -50%) scale(1.1);
+    }
+	 .header {
+            background-color: powderblue; /* corrected typo */
+            padding: 20px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: relative; /* added position relative */
+            z-index: 100; /* added z-index */
+        }
+
+        /* ... (your styles remain unchanged) ... */
+
+        .fullscreen-gallery {
+            position: relative;
+            width: 100vw;
+            height: 100vh;
+            overflow: hidden;
+            z-index: 2; /* added z-index */
+        }
+
+}
+
+
+    </style>
+</head>
+
+    <header class="header">
+        <span class="logo">
+            <a href="Adila.html"><image src="images/logo.png" alt="#logo here" ></a>
+        </span>
+     
+        <nav>
+            <ul class="menu">
+                <li><a href="#">Home</a></li>
+                <li><a href="rooms.html">Rooms</a></li>
+                <li><a href="Gallery.html">Gallery</a></li>
+                <li><a href=" service.html">services</a></li>
+                <li><a href="admin login.php">Admin</a></li>
+				<li><a href="Contact.php">Contact Us</a></li>
+				<li><a href="aboutus.html">about Us</a></li>
+            </ul>
+        </nav>
+    </header>
+<body style="background-color:#32517a">
+<section class="fullscreen-gallery">
+    <div class="gallery-slider">
+        <div class="gallery-item">
+            <img src="images/adila.png" alt="Gallery Image 1">
+            <h1 class="slide-heading">Welcome to Adila Hotel</h1>
+            <div class="image-caption">Building outer view</div>
+        </div>
+        <div class="gallery-item">
+            <img src="images/adilafront.png"  alt="Gallery Image 2">
+            <h1 class="slide-heading">Welcome to Adila Hotel</h1>
+            <div class="image-caption"></div>
+        </div>
+		 <div class="gallery-item">
+            <img src="images/adilaframe.png"  alt="Gallery Image 3">
+            <h1 class="slide-heading">Welcome to Adila Hotel</h1>
+            <div class="image-caption"></div>
+        </div>
+        
+        <!-- Add more images as needed -->
+    </div>
+</section>
+
+
+
+
+    <section class="banner">
+	<marquee>
+        <h1>Welcome to Adila Hotel </h1>
+		</marquee>
+		
+
+</div>
+    </section>
+
+    
+
+    <section class="room">
+        <h2 style="text-align:center;color:#adaaac;">Our Rooms</h2>
+        <p style="text-align:center;color:#adaaac;">
+           we have four types of rooms kings room standard room luxury room and twin room
+        </p>
+    </section>
+	
+<section class="rooms-offered">
+    <div class="room-type" id="kings-room">
+	<div class="room-image">
+        <img id="king-image1" src="FBs.jpg" alt="King's Room">
+        <img id="king-image2" src="room2.jpg" alt="King's Room">
+        <img id="king-image3" src="room3.jpg" alt="King's Room">
+		</div>
+		<div class="room-text">
+        <h3>King's Room</h3>
+        <p>Our King's Room offers spacious comfort with a king-sized bed and modern amenities.</p>
+		  <p>Value: 3000 Birr per night</p>
+        <p><a href="rooms.html">Book Now</a></p>
+		</div>
+		</div>
+    <div class="room-type" id="luxury-room">
+	<div class="room-image">
+        <img id="luxury-image1" src="luxury1.jpg" alt="Luxury Room">
+        <img id="luxury-image2" src="luxury2.jpg" alt="Luxury Room">
+        <img id="luxury-image3" src="luxury3.jpg" alt="Luxury Room">
+		</div>
+	<div class="room-text">
+        <h3>Luxury Room</h3>
+        <p>Indulge in luxury with our Luxury Room, featuring premium amenities and elegant decor.</p>
+		  <p>Value: 2500 Birr per night</p>
+        <p><a href="rooms.html">Book Now</a></p>
+		</div>
+    </div>
+    <div class="room-type" id="twin-room">
+	<div class="room-image">
+        <img id="twin-image1" src="twin1" alt="Twin Room">
+        <img id="twin-image2" src="twin2" alt="Twin Room">
+        <img id="twin-image3" src="twin3" alt="Twin Room">
+		</div>
+		<div class="room-text">
+        <h3>Twin Room</h3>
+        <p>Perfect for friends or family, our Twin Room offers twin beds and a relaxing atmosphere.</p>
+		  <p>Value: 2000 Birr per night</p>
+        <p><a href="rooms.html">Book Now</a></p>
+		</div>
+    </div>
+	
+	 
+	
+</section>
+  <div style="width: 100% class="col-md-4">
+      <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3955.0379627538787!2d37.855602174053466!3d7.570840310109171!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x17b2497f0e997d07%3A0x60d4b916020d35e1!2sAdila%20hotel!5e0!3m2!1sen!2set!4v1714500951707!5m2!1sen!2set"
+	  width="100%" height="400px" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe></div>
+                   
+                        <a href="tel:+2519614545">+2519614545</a>
+                        <a href="Adila.com">info@Adila hotelwebsite.com</a>
+                       <p>HVC5+87M adilahotel , Naramo, Hosaina, Ethiopia</p>
+                    
+                </div>
+
+	
+    <footer class="footer"style="background-color:blueblack">
+        <div class="container">
+            <div class="row">
+                
+                <div class="col-md-4">
+                    <h3>Quick Links</h3>
+                   
+                       <a href="#">Home</a></li><br>
+                       <a href="rooms.html">Rooms</a><br>
+                       <a href="Gallery.html">Gallery</a><br>
+                        <a href="contact.php">Contact</a>
+                    
+                </div>
+                <div class="col-md-4">
+                    <h3>Follow Us</h3>
+					
+                    <ul class="social-icons">
+                        <li><a href="https://www.facebook.com/people/Adila-Hotel/61556711813859/?sk=about"><i class="fab fa-facebook-f"></i>FaceBook</a></li>
+                        <li><a href="https://www.instagram.com/adilahotel/"><i class="fab fa-instagram"></i>Instagram</a></li>
+                        <li><a href="adilahotel@gmail.com"><i class="fab fa-Gmail"></i>Gmail</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+		<section class="learn-more">
+    <div class="container">
+        <h2>Discover the Adila Experience</h2>
+        <a href="learnmore.html" class="btn">Learn More</a>
+    </div>
+</section>
+<section class="work-with-us">
+    <div class="container">
+      
+        <p>We are always looking for talented individuals to join our team. Explore exciting career opportunities at Shambalala Hotel.</p>
+        <a href="contactdeveloper.php" class="btn">Contact Developer</a>
+    </div>
+</section>
+        <div class="copyright">
+            <p>Copyright © 2016 Adila Hotel Website. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+   document.addEventListener('DOMContentLoaded', function () {
+
+    function slideKingImages() {
+        const kingImages = [
+            document.getElementById('king-image1'),
+            document.getElementById('king-image2'),
+            document.getElementById('king-image3')
+        ];
+        let kingIndex = 0;
+
+        setInterval(() => {
+            kingImages[kingIndex].classList.remove('active');
+            kingIndex = (kingIndex + 1) % kingImages.length;
+            kingImages[kingIndex].classList.add('active');
+        }, 4000);
+    }
+
+    function slideLuxuryImages() {
+        const luxuryImages = [
+            document.getElementById('luxury-image1'),
+            document.getElementById('luxury-image2'),
+            document.getElementById('luxury-image3')
+        ];
+        let luxuryIndex = 0;
+
+        setInterval(() => {
+            luxuryImages[luxuryIndex].classList.remove('active');
+            luxuryIndex = (luxuryIndex + 1) % luxuryImages.length;
+            luxuryImages[luxuryIndex].classList.add('active');
+        }, 4000);
+    }
+
+    function slideTwinImages() {
+        const twinImages = [
+            document.getElementById('twin-image1'),
+            document.getElementById('twin-image2'),
+            document.getElementById('twin-image3')
+        ];
+        let twinIndex = 0;
+
+        setInterval(() => {
+            twinImages[twinIndex].classList.remove('active');
+            twinIndex = (twinIndex + 1) % twinImages.length;
+            twinImages[twinIndex].classList.add('active');
+        }, 4000);
+    }
+
+    slideKingImages();
+    slideLuxuryImages();
+    slideTwinImages();
+
+});
+	
+       document.addEventListener('DOMContentLoaded', function () {
+    const gallerySlider = document.querySelector('.gallery-slider');
+    const galleryItems = document.querySelectorAll('.gallery-item');
+    const slideHeading = document.querySelectorAll('.slide-heading');
+
+    let slideIndex = 0;
+    const totalSlides = galleryItems.length;
+
+    function slideGallery() {
+        slideIndex++;
+        if (slideIndex >= totalSlides) {
+            slideIndex = 0;
+        }
+
+        gallerySlider.style.transform = `translateX(-${slideIndex * 100}vw)`;
+
+        // Reset heading positions and show them after the slide transition
+        slideHeading.forEach(heading => {
+            heading.style.opacity = 0;
+            setTimeout(() => {
+                heading.style.opacity = 1;
+            }, 1000);
+        });
+    }
+
+    // Slide to reveal rooms after 4 seconds and then continue sliding
+    setInterval(() => {
+        slideGallery();
+    }, 5000); // Adjust timing as needed
+});
+
+
+    </script>
+</body>
+</html>

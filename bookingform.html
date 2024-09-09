@@ -1,0 +1,145 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Booking Form - Hotel Website</title>
+  <link rel="stylesheet" href="bookingform.css">
+</head>
+<body>
+  <div class="booking-form">
+    <h2>Booking Details</h2>
+    <form id="bookingForm" action="confirm_booking.php" method="post">
+      <div class="room-selection">
+        <div class="form-group">
+          <label for="room_type">Room Type:</label>
+          <select id="room_type" name="room_type" onchange="calculateTotalPrice()">
+            <option value="kings">Kings Room</option>
+            <option value="twins">Twin Room</option>
+            <option value="luxury">Luxury Room</option>
+            <option value="standard">Standard Room</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="num_rooms">Number of Rooms:</label>
+          <input type="number" id="num_rooms" name="num_rooms" min="1" value="1" onchange="calculateTotalPrice()">
+        </div>
+      </div>
+      <div id="room_selections"></div> 
+      
+      <div class="form-group">
+        <button type="button" onclick="addRoom()">Add Room</button>
+      </div>
+      
+      <div class="form-group">
+        <label for="checkin">Check-in Date:</label>
+        <input type="date" id="checkin" name="checkin" required>
+      </div>
+      
+      <div class="form-group">
+        <label for="num_days">Number of Days:</label>
+        <input type="number" id="num_days" name="num_days" min="1" required onchange="calculateTotalPrice()">
+      </div>
+      <div class="form-group">
+        <label for="special_requests">Special Requests:</label>
+        <textarea id="special_requests" name="special_requests" rows="4" cols="50"></textarea>
+      </div>
+
+      <div class="form-group">
+        <label for="total_price">Total Price in ETB:</label>
+        <input type="text" id="total_price" name="total_price" readonly>
+      </div>
+      <h2>Payment Details</h2>
+      <div class="form-group">
+        <label for="payment_method">Select Payment Method:</label>
+        <div id="payment_methods">
+          <a href="https://www.combanketh.et/en/cbe-birr-agents/" target="_self">
+            <img src="images/cbebirr.png" alt="CBE Birr" width="50">
+          </a>
+		  <a href="https://www.ethiotelecom.et/telebirr/utility-bill-payment-telebirr/" target="_self">
+            <img src="images/telebirr.png" alt="tele birr birr" width="50">
+          </a>
+		  <a href="https://dashenbanksc.com/amole-payment-services/" target="_self">
+            <img src="images/dashin.png" alt="Dashin bank" width="50">
+          </a>
+		  <a href="https://www.zemenbank.com/internet-bankin" target="_self">
+            <img src="images/zemen.png" alt="zemen bank" width="50">
+          </a>
+		  <a href="https://corporate.bankofabyssinia.com/Corporate/servletcontroller" target="_self">
+            <img src="images/abisiniya.png" alt="Abisiniya bank" width="50">
+          </a>
+     
+        </div>
+      </div>
+      
+      <button type="submit">Confirm Booking</button>
+    </form>
+  </div>
+
+  <script>
+  function calculateTotalPrice() {
+  var roomType = document.getElementById('room_type').value;
+  var numRooms = parseInt(document.getElementById('num_rooms').value);
+  var numDays = parseInt(document.getElementById('num_days').value);
+  var totalPrice = 0;
+
+  // Calculate total price based on room type, number of rooms, and number of days
+  switch (roomType) {
+    case 'kings':
+      totalPrice = numRooms * numDays * 200; // Kings Room price: 200 ETB per night
+      break;
+    case 'twins':
+      totalPrice = numRooms * numDays * 150; // Twin Room price: 150 ETB per night
+      break;
+    case 'luxury':
+      totalPrice = numRooms * numDays * 300; // Luxury Room price: 300 ETB per night
+      break;
+    case 'standard':
+      totalPrice = numRooms * numDays * 100; // Standard Room price: 100 ETB per night
+      break;
+  }
+
+  // Update the total price input field
+  document.getElementById('total_price').value = totalPrice;
+}
+
+function addRoom() {
+  var roomType = document.getElementById('room_type').value;
+  var numRooms = parseInt(document.getElementById('num_rooms').value);
+  var roomSelections = document.getElementById('room_selections');
+
+  // Create a new room selection div
+  var roomSelectionDiv = document.createElement('div');
+  roomSelectionDiv.classList.add('room-selection');
+
+  // Add room type label
+  var roomTypeLabel = document.createElement('label');
+  roomTypeLabel.textContent = 'Room Type:';
+  roomSelectionDiv.appendChild(roomTypeLabel);
+
+  // Add room type select input
+  var roomTypeSelect = document.createElement('select');
+  roomTypeSelect.name = 'room_type_' + roomType;
+  roomTypeSelect.disabled = true; // Disable room type selection for additional rooms
+  var option = document.createElement('option');
+  option.value = roomType;
+  option.textContent = roomType.charAt(0).toUpperCase() + roomType.slice(1) + ' Room';
+  roomTypeSelect.appendChild(option);
+  roomSelectionDiv.appendChild(roomTypeSelect);
+
+  // Add number of rooms input
+  var numRoomsInput = document.createElement('input');
+  numRoomsInput.type = 'number';
+  numRoomsInput.name = 'num_rooms_' + roomType;
+  numRoomsInput.value = numRooms;
+  numRoomsInput.min = 1;
+  numRoomsInput.disabled = true; // Disable number of rooms selection for additional rooms
+  roomSelectionDiv.appendChild(numRoomsInput);
+
+  // Append the room selection div to the container
+  roomSelections.appendChild(roomSelectionDiv);
+}
+  </script>
+</body>
+</html>

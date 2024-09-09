@@ -1,0 +1,114 @@
+/* Style the table */
+table {
+  border-collapse: collapse;
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+th, td {
+  border: 1px solid #ddd;
+  padding: 15px;
+  text-align: left;
+}
+
+th {
+  background-color: #f2f2f2;
+  font-weight: bold;
+  font-size: 16px;
+  color: #333; /* Text color for table header */
+}
+
+/* Style the header */
+h1 {
+  text-align: center;
+  padding: 20px;
+  background-color: white;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  box-shadow: 1px 1px 1px 1px rgba(0, 0, 0, 0.2);
+  margin-top: 0;
+  font-size: 24px;
+  font-weight: bold;
+  color: #333;
+}
+
+/* Style the delete button */
+a.delete {
+  color: #ff0000;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+/* Confirmation and cancellation links */
+a.confirm {
+  color: #007bff; /* Blue for confirmation */
+}
+
+a.cancel {
+  color: #dc3545; /* Red for cancellation */
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  table {
+    font-size: 14px;
+  }
+}
+
+/* Pagination styles */
+.pagination {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.pagination a {
+  display: inline-block;
+  padding: 8px 16px;
+  background-color: #f2f2f2;
+  border: 1px solid #ddd;
+  margin: 0 4px;
+  text-decoration: none;
+  color: #333;
+  font-size: 14px;
+}
+
+.pagination a.active {
+  background-color: #007bff;
+  color: #fff;
+}
+
+/* Additional styling for search bar */
+#search {
+  padding: 10px;
+  border: 1px solid #ddd;
+  font-size: 16px;
+  color: #333; /* Text color for search bar */
+}
+
+#search_by {
+  padding: 10px;
+  border: 1px solid #ddd;
+  font-size: 16px;
+  color: #333; /* Text color for search bar */
+}
+
+/* Additional styling for filter inputs */
+#checkin_start_date,
+#num_days,
+#room_type {
+  padding: 10px;
+  border: 1px solid #ddd;
+  font-size: 16px;
+  color: #333; /* Text color for filter inputs */
+}
+
+/* Additional styling for button */
+button {
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  font-size: 16px;
+  cursor: pointer;
+}

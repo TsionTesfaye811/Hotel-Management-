@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Forgot Password - Hotel Website</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #ffe4b5; /* Moccasin */
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    .forgot-password-container {
+      background-color: #fff; /* White */
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      padding: 20px;
+      width: 320px;
+      text-align: center;
+    }
+
+    h2 {
+      color:#fff;
+      font-size: 28px;
+      margin-bottom: 10px;
+      background-color:powderblue;
+    }
+
+    p {
+      color: #666;
+      margin-bottom: 20px;
+    }
+
+    .form-group {
+      margin-bottom: 20px;
+      width:100%;
+    }
+
+    label {
+      display: block;
+      font-weight: bold;
+      margin-bottom: 5px;
+      color: #007bff; /* Blue */
+    }
+
+    input[type="email"],
+    input[type="tel"],
+    input[type="text"],
+    input[type="password"] {
+      width: 100%;
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+
+    button {
+      width: 100%;
+      padding: 10px;
+      background-color: #007bff; /* Blue */
+      color: #fff;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    button:hover {
+      background-color: #0056b3; /* DarkBlue */
+    }
+
+    .back-to-login {
+      margin-top: 20px;
+    }
+
+    .back-to-login button {
+      color: #fff;
+      text-decoration: none;
+      background-color: #007bff; /* Blue */
+      padding: 10px;
+      border-radius: 5px;
+      border: none;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    .back-to-login button:hover {
+      background-color: #0056b3; /* DarkBlue */
+    }
+  </style>
+</head>
+<body>
+  <div class="forgot-password-container">
+    <h2>Forgot Password?</h2>
+    <p>Don't worry! We've got you covered.</p>
+    <form id="forgot-password-form">
+      <div class="form-group">
+        <label for="username">Username:</label><br>
+        <input type="text" id="username" name="username" required>
+      </div>
+      <div class="form-group">
+        <label for="identifier">Enter your email or phone number:</label><br>
+        <input type="text" id="identifier" name="identifier" required>
+      </div>
+      <button type="submit">Reset Password</button>
+    </form>
+    <form id="reset-password-form" style="display: none;">
+      <div class="form-group">
+        <label for="new-password">New Password:</label><br>
+        <input type="password" id="new-password" name="new-password" required>
+      </div>
+      <div class="form-group">
+        <label for="confirm-password">Confirm Password:</label><br>
+        <input type="password" id="confirm-password" name="confirm-password" required>
+      </div>
+      <button type="submit">Change Password</button>
+    </form>
+    <div class="back-to-login">
+      <button onclick="location.href='login.html'">Login Here</button>
+    </div>
+  </div>
+
+  <script>
+    document.getElementById("forgot-password-form").addEventListener("submit", function(event) {
+      event.preventDefault();
+
+      // Get the username, identifier (email or phone number) entered by the user
+      var username = document.getElementById("username").value;
+      var identifier = document.getElementById("identifier").value;
+
+      // Here, you should implement the server-side logic to verify the credentials against the database
+      // You can make an AJAX request to a server endpoint that performs the verification
+
+      // Assuming the verification is successful, proceed to the password reset step
+      showResetPasswordStep();
+    });
+
+    document.getElementById("reset-password-form").addEventListener("submit", function(event) {
+      event.preventDefault();
+
+      // Get the new password and confirm password entered by the user
+      var newPassword = document.getElementById("new-password").value;
+      var confirmPassword = document.getElementById("confirm-password").value;
+
+      // Check if the passwords match
+      if (newPassword !== confirmPassword) {
+        alert("Passwords do not match. Please try again.");
+        return;
+      }
+
+      // Here, you should implement the server-side logic to update the password in the database
+      // You can make an AJAX request to a server endpoint that handles the password update
+
+      // Assuming the password update is successful, redirect the user to the login page
+      window.location.href = "login.html";
+    });
+
+    function showResetPasswordStep() {
+      // Hide the initial form and show the password reset form
+      document.getElementById("forgot-password-form").style.display = "none";
+      document.getElementById("reset-password-form").style.display = "block";
+    }
+  </script>
+</body>
+</html>

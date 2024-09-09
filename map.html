@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Location Map of Hosanna, Ethiopia</title>
+    <style>
+        #map {
+            height: 400px;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <h1>Location Map of Hosanna, Ethiopia</h1>
+    <div id="map"></div>
+
+    <script>
+        function initMap() {
+            // Coordinates for Hosanna, Ethiopia
+            var hosanna = {lat: 7.5569, lng: 37.8536};
+
+            // Coordinates for Shambalala Hotel
+            var shambalala = {lat: INSERT_LATITUDE, lng: INSERT_LONGITUDE};
+
+            // Create a map object and specify the DOM element for display
+            var map = new google.maps.Map(document.getElementById('map'), {
+                center: hosanna,
+                zoom: 12 // You can adjust the zoom level as needed
+            });
+
+            // Create a marker for Hosanna and set its position
+            var hosannaMarker = new google.maps.Marker({
+                map: map,
+                position: hosanna,
+                title: 'Hosanna, Ethiopia'
+            });
+
+            // Create a marker for Shambalala Hotel and set its position
+            var shambalalaMarker = new google.maps.Marker({
+                map: map,
+                position: shambalala,
+                title: 'Shambalala Hotel'
+            });
+        }
+    </script>
+
+    <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&callback=initMap" async defer></script>
+</body>
+</html>

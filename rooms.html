@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hotel Rooms - Hotel Website</title>
+  <link rel="stylesheet" href="rooms.css">
+</head>
+<body style="background-color:#32517a;">
+  <div class="container">
+    <div class="room kings" data-available="10">
+      <img src="images/king.png" alt="Kings Room">
+      <div class="room-details">
+        <h3>Kings Room</h3>
+        <p class="description">Luxurious and spacious room fit for a king.</p>
+        <p class="price">3000 ETB per night</p>
+        <a href="loginform.php" class="book-button">Book Now</a>
+      </div>
+    </div>
+
+    <div class="room twins" data-available="25">
+      <img src="images/twin.png" alt="Twins Room">
+      <div class="room-details">
+        <h3>Twins Room</h3>
+        <p class="description">Cozy room with two twin beds, perfect for friends or family.</p>
+        <p class="price">2000 ETB per night</p>
+        <a href="loginform.php" class="book-button">Book Now</a>
+      </div>
+    </div>
+
+    <div class="room luxury" data-available="20">
+      <img src="images/luxury.png" alt="Luxury Room">
+      <div class="room-details">
+        <h3>Luxury Room</h3>
+        <p class="description">Exquisite room with premium amenities and breathtaking views.</p>
+        <p class="price">2600 ETB per night</p>
+        <a href="loginform.php" class="book-button">Book Now</a>
+      </div>
+    </div>
+
+    <div class="room standard" data-available="40">
+      <img src="images/standard.jpg" alt="Standard Room">
+      <div class="room-details">
+        <h3>Standard Room</h3>
+        <p class="description">Comfortable room with essential amenities for a pleasant stay.</p>
+        <p class="price">1000 ETB per night</p>
+        <a href="loginform.php" class="book-button">Book Now</a>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const bookButtons = document.querySelectorAll('.book-button');
+
+      bookButtons.forEach(button => {
+        button.addEventListener('click', function(event) {
+          event.preventDefault();
+
+          const room = this.closest('.room');
+          const availableRooms = room.dataset.available;
+
+          if (availableRooms > 0) {
+            const roomType = room.querySelector('h3').textContent;
+            const confirmBooking = confirm(`You are booking a ${roomType}. ${availableRooms} rooms available. Proceed to login?`);
+
+            if (confirmBooking) {
+              window.location.href = 'loginform.php';
+            }
+          } else {
+            alert('Sorry, this room is currently not available. Please choose another room.');
+          }
+        });
+      });
+    });
+  </script>
+</body>
+</html>
